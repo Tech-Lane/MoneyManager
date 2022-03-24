@@ -1,0 +1,105 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Notes.MainWindow"
+        Title="Money Tracker">
+  
+  
+
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+     
+    <MenuItem Header="Options">
+      
+        <MenuItem Header="About"/>
+    
+    </MenuItem>
+    
+    </Menu>
+
+    <TabControl>
+      <TabItem Header="Overview">
+        
+        <StackPanel>
+          <!-- Total income, total debt, Total Expense-->
+          <TextBlock FontWeight="Bold">Total Income</TextBlock>
+          <TextBlock Name="OTotalIncomelbl" Text="$0"/>
+
+          <TextBlock FontWeight="Bold">Total Expense</TextBlock>
+          <TextBlock Name="OTotalExpenselbl" Text="$0"/>
+
+          <TextBlock FontWeight="Bold">Total Debt</TextBlock>
+          <TextBlock Name="OTotalDebtlbl" Text="$0"/>
+
+          <TextBlock FontWeight="Bold">After Expense Income</TextBlock>
+          <TextBlock Name="OAfterExpenseIncome" Text="$0"/>
+       
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="Income">
+        <!-- Source, Amount, Date and display total -->
+        <StackPanel>
+          
+          <TextBlock Text="Total Income" FontWeight="Bold"/>
+          <TextBlock Text="$0" Name="TotalIncomelbl"/>
+
+          <DataGrid AutoGenerateColumns="False" GridLinesVisibility="All">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Source"/>
+              <DataGridTextColumn Header="Amount"/>
+              <DataGridTextColumn Header="Date"/>
+            </DataGrid.Columns>
+          </DataGrid>
+          
+        </StackPanel>
+
+      </TabItem>
+      <TabItem Header="Bills">
+        <!-- Source, Amout, Date and display total -->
+        <StackPanel>
+
+          <TextBlock Text="Total Expense" FontWeight="Bold"/>
+          <TextBlock Text="$0" Name="TotalExpenselbl"/>
+
+          <DataGrid AutoGenerateColumns="False" GridLinesVisibility="All">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Source"/>
+              <DataGridTextColumn Header="Amount"/>
+              <DataGridTextColumn Header="Date"/>
+            </DataGrid.Columns>
+          </DataGrid>
+
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="Debts">
+        <!-- Source, Amount, Total, Interest -->
+
+        <StackPanel>
+
+          <TextBlock Text="Total Debt" FontWeight="Bold"/>
+          <TextBlock Text="$0" Name="TotalDebtlbl"/>
+
+          <DataGrid AutoGenerateColumns="False" GridLinesVisibility="All">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Source"/>
+              <DataGridTextColumn Header="Amount"/>
+              <DataGridTextColumn Header="Monthly payment"/>
+              <DataGridTextColumn Header="Date due"/>
+            </DataGrid.Columns>
+          </DataGrid>
+
+        </StackPanel>
+        
+      </TabItem>
+
+      <TabItem Header="Budget">
+        
+      </TabItem>
+      
+    </TabControl>
+  
+  </DockPanel>
+</Window>
